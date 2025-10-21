@@ -1,6 +1,14 @@
-# Approach Summary
-
 # Team Prime Coders
+
+# Results on Public LeaderBoard
+
+|   Rank    |  241     |
+|-------|-------|
+| SMAPE | 45.494|
+
+
+
+# Approach Summary
 
 ## Overview
 We framed product price prediction as a supervised regression problem on a rich, multi-modal tabular dataset. The final system combines deep learning models trained on learned text/image representations (Stella, SigLIP, Qwen, Gemma) and structured features with a tree-based booster (XGBoost). Predictions are produced on the log-price scale and mapped back via expm1. We report and optimize Symmetric Mean Absolute Percentage Error (SMAPE) on the original price scale.
@@ -54,3 +62,5 @@ We clip extreme values to [-1e5, 1e5] and scale each feature group independently
 - Evaluation/ensemble scripts: `Trees/evaluate4.py` (no Gemma), `Trees/evaluate3.py` (with Gemma, architecture auto-infer and diagnostics).
 
 This pipeline balances robustness and performance by blending complementary inductive biases: representation learning via Deep-Wide MLPs and non-linear partitioning via XGBoost, with careful preprocessing, clipping, and SMAPE-driven hyperparameter search.
+
+
