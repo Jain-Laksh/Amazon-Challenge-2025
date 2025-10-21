@@ -1,5 +1,5 @@
 from huggingface_hub import login
-access_token = "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"
+access_token = ""
 login(token=access_token)
 
 

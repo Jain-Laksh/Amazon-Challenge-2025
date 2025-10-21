@@ -1,11 +1,6 @@
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 
-from huggingface_hub import login
-access_token = "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"
-login(token=access_token)
-
-
 import pandas as pd
 import torch
 from sentence_transformers import SentenceTransformer
