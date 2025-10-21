@@ -15,9 +15,10 @@ We framed product price prediction as a supervised regression problem on a rich,
 
 ## Features and embeddings
 - Structured ("manual") features: all non-embedding, non-target columns (including engineered and TF-IDF features `tfidf_*`).
-- Vision embeddings: `siglip_*` (SigLIP image representations) and `stella_*` (text-image aligned textual representations).
+- Vision embeddings: `siglip_*` (SigLIP image representations)  
 - LLM text embeddings:
-  - `qwen_*`: Qwen sentence embeddings merged by `sample_id`.
+  - `stella_*` Stella sentence embeddings merged by `sample_id`.
+  - `qwen_*`: Qwen sentence embeddings (trained and merged analogously).
   - `gemma_*`: EmbeddingGemma sentence embeddings (trained and merged analogously).
 
 We clip extreme values to [-1e5, 1e5] and scale each feature group independently with StandardScaler.
